@@ -4,34 +4,18 @@
 #include <vector>
 using namespace std;
 
-// Splits string into words using the delimiter 'delim'
-vector<string> split(string sentence, char delim)
-{
-	vector<string> words;	// Vector to hold words
-	stringstream sstr(sentence);	// String stream to be used as stream for getline
-	string w;					// It will hold each word on each iteration
-	while (getline(sstr, w, delim))
-	{
-		words.push_back(w);	// Put word into vector
-	}
-	return words;
-}
 
-// Displays vector to console
-void display(vector<string> v)
-{
-	for (const string& item : v)
-	{
-		cout << item << endl;
-	}
-}
 int main()
 {
-	string sentence = "Orca whale";
+	string sentence = "Orca whale";		//find with strings
 
-	cout << "Spliting the sentence: " << sentence << endl;
-	auto words = split(sentence, ' ');
-	display(words);
+	int pos = sentence.find("whale");
+	
+	if(pos > 0)
+		cout << "Found (whale) at position " << pos << endl;
+
+	int primeDigits[4] = { 1, 3, 5, 7 };
+	int* p = find(primeDigits, primeDigits + 4, 3);		//find 3, returns a pointer when searching through arrays
 
 
 	cout << "Press enter to exit" << endl;
